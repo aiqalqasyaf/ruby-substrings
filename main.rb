@@ -9,7 +9,6 @@ def substrings(sentence, dictionary)
   dictionary.each do |str|
     words.each do |word|
       word.length.times do
-        puts word[pointer..word.length - 1]
         if word[pointer..word.length - 1] == str
           count += 1
           substrings[str] = count
