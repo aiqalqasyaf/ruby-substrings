@@ -2,20 +2,21 @@
 
 def substrings(sentence, dictionary)
   substrings = {}
-  count = pointer = 0
+  count = start = 0
 
-  words = sentence.split(' ')
+  words = sentence.downcase.split(' ')
 
   dictionary.each do |str|
     words.each do |word|
+      last = word.length - 1
       word.length.times do
-        if word[pointer..word.length - 1] == str
+        if word[start..last] == str
           count += 1
           substrings[str] = count
         end
-        pointer += 1
+        start += 1
       end
-      pointer = count = 0
+      start = count = 0
     end
   end
   p substrings
@@ -23,4 +24,4 @@ end
 
 dictionary = %w[below down go going horn how howdy it i low own part partner sit]
 
-substrings('below howdy', dictionary)
+substrings('below low low', dictionary)
