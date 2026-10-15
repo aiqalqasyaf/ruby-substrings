@@ -16,8 +16,9 @@ def substrings(sentence, dictionary)
         end
         start += 1
       end
-      start = count = 0
+      start = 0
     end
+    count = 0
   end
   p substrings
 end
